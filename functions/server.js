@@ -29,4 +29,8 @@ app.post("/shorten-url", async (req, res) => {
   }
 });
 
-app.listen(3050);
+// Export the Express app as the handler
+exports.handler = async (event, context) => {
+  // Ensure that Express middleware runs
+  return require("serverless-http")(app)(event, context);
+};
