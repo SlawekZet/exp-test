@@ -1,0 +1,11 @@
+[build]
+  functions = "functions"
+
+[functions]
+  external_node_modules = ["express"]
+
+[[redirects]]
+  force = true
+  from = "/shorten-url"
+  status = 200
+  to = "/.netlify/functions/server/shorten-url"
